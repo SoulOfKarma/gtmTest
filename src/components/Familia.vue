@@ -220,7 +220,9 @@
       }
     },
     created(){
-      this.listarFamiliaMascota()
+      setTimeout(() => {
+        this.listarFamiliaMascota()
+      }, 2000);      
     }
   }
   </script>

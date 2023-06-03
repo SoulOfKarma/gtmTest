@@ -305,10 +305,15 @@ export default {
     }
   },
   created(){
-    this.listarPersonas()
-    this.listarFamiliaMascota()
-    this.listarRazaMascota()
-    this.listarMascotas()
+    setTimeout(() => {
+      this.listarPersonas()
+      this.listarFamiliaMascota()
+    }, 1000);
+    setTimeout(() => {
+      this.listarRazaMascota()
+      this.listarMascotas()
+    }, 2000);
+    
   }
 }
 </script>

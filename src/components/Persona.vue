@@ -431,7 +431,10 @@ export default {
     },
   },
   created(){
-    this.listarPersonas()
+    setTimeout(() => {
+       this.listarPersonas()
+    }, 2000);
+    
   }
 }
 </script>
