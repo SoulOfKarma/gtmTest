@@ -1,36 +1,36 @@
-# GTMProyect
+# GTM Prueba Tecnica
+Este Proyecto esta creado para la Prueba Tecnica de GTM(Grupo Tus Maquinas),
+Esta creado para Ingresar dueños con sus mascotas y visualizar una lista donde se desplieguen.
+Se uso Node js Usando Vue js para el Frontend y Naive UI como Framework Css.
 
-This template should help get you started developing with Vue 3 in Vite.
+El proyecto de compone de 4 Items los cuales son:
 
-## Recommended IDE Setup
+- Mascotas
+- Dueño
+- Familia
+- Raza
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Mascotas: En esta seccion se registran las mascotas asociadas a un dueño ya previamente ingresado en su seccion,
+aqui se pueden visualizar que tipo de mascota es, su nombre y datos del dueño, como tambien modificar sus datos.
 
-## Customize configuration
+Dueño: En esta seccion se registra al dueño de la mascota para que despues aparezca en un listado de seleccion al ingresar a las mascotas, 
+aca se puede ingresar, modificar o activar/desactivar dueño para mantener registros de la persona.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Familia: en esta seccion se registra el tipo de familia a cual pertenece la mascota, digase: Perro, Gato, Pez, etc.
 
-## Project Setup
+Raza: en esta seccion se registra el tipo de raza a cual pertenece la mascota, digase: Pug, Egipcio, Bulldog, etc.
 
-```sh
-npm install
-```
+Host:
+Este servicio esta alojado en https://vercel.com/
 
-### Compile and Hot-Reload for Development
+Para acceder a esta plataforma el link es el siguiente: https://gtm-test-dusky.vercel.app/
 
-```sh
-npm run dev
-```
+Lenguajes Utilizados:
+- Node Js
+- Vue js
+- Naive UI
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
-# gtmTest
+Dependencias:
+- Axios
+- sweetalert2
+- Rut.js
