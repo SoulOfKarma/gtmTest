@@ -306,17 +306,18 @@ export default {
   },
   created(){
     setTimeout(() => {
-      this.listarPersonas()
-    }, 1000);
-    setTimeout(() => {
-      this.listarFamiliaMascota()
-    }, 1000);
-    setTimeout(() => {
-      this.listarRazaMascota()
-    }, 1000);
-    setTimeout(() => {
       this.listarMascotas()
     }, 1000);
+    setTimeout(() => {
+      this.listarPersonas()
+    }, 2000);
+    setTimeout(() => {
+      this.listarFamiliaMascota()
+    }, 3000);
+    setTimeout(() => {
+      this.listarRazaMascota()
+    }, 3000);
+    
     
   }
 }
