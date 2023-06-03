@@ -316,7 +316,7 @@ export default {
     }, 3000);
     setTimeout(() => {
       this.listarRazaMascota()
-    }, 3000);
+    }, 4000);
     
     
   }
