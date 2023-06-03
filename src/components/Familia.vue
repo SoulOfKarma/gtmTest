@@ -105,7 +105,7 @@
         }
         
         const familia = {
-          descripcionFamilia: this.descripcionFamilia
+          descripcionfamilia: this.descripcionFamilia
         }
   
         axios
@@ -156,7 +156,7 @@
 
         const familia = {
           id: this.idFamilia,
-          descripcionFamilia: this.descripcionFamilia,
+          descripcionfamilia: this.descripcionFamilia,
         }
   
         axios
@@ -191,7 +191,7 @@
         
       },
       async listarFamiliaMascota(){
-        axios.get(host+"listaFamiliaMascota").then((response) => {
+        axios.get(host+"listaFamiliaMascota").then((response) => {     
           this.listaFamiliaMascota = response.data
         })
       },

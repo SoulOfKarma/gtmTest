@@ -9,15 +9,15 @@ const cors = require('cors');
 const bodyParser = require('body-parser')
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: ['http://localhost:5173', 'https://gtm-test-dusky.vercel.app']
 }));
 
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'karma',
-  password: '123456',
-  database: 'gtm'
-});
+ const connection = mysql.createConnection({
+  host: 'db4free.net',
+  user: 'gtmuser',
+  password: 'Darkzero25',
+  database: 'gtmdatabase'
+}); 
 
 connection.connect((err) => {
   if (err) {
@@ -73,7 +73,7 @@ app.get('/listaPersonasSelect', (req, res) => {
 });
 
 app.get('/listaFamiliaMascota', (req, res) => {
-  connection.query('SELECT descripcionFamilia as label,id as value FROM familiamascota', (err, results) => {
+  connection.query('SELECT descripcionfamilia as label,id as value FROM familiamascota', (err, results) => {
     if (err) {
       console.error('Error al ejecutar la consulta:', err);
       res.status(500).json({ error: 'Error al ejecutar la consulta' });
@@ -84,7 +84,7 @@ app.get('/listaFamiliaMascota', (req, res) => {
 });
 
 app.get('/listaRazaMascota', (req, res) => {
-  connection.query('SELECT descripcionRaza as label,id as value FROM razamascota', (err, results) => {
+  connection.query('SELECT descripcionraza as label,id as value FROM razamascota', (err, results) => {
     if (err) {
       console.error('Error al ejecutar la consulta:', err);
       res.status(500).json({ error: 'Error al ejecutar la consulta' });
@@ -98,18 +98,18 @@ app.get('/listaMascotas', (req, res) => {
   connection.query(`
     SELECT
       mascota.id,
-      mascota.runPersona,
+      mascota.runpersona,
       CONCAT(persona.nombre, ' ', persona.apellido) AS nombre,
-      mascota.nombreMascota,
-      familiamascota.descripcionFamilia,
-      razamascota.descripcionRaza,
-      mascota.idFamilia,
-      mascota.idRaza
+      mascota.nombremascota,
+      familiamascota.descripcionfamilia,
+      razamascota.descripcionraza,
+      mascota.idfamilia,
+      mascota.idraza
     FROM
       mascota
-      JOIN persona ON mascota.runPersona = persona.run
-      JOIN familiamascota ON mascota.idFamilia = familiamascota.id
-      JOIN razamascota ON mascota.idRaza = razamascota.id
+      JOIN persona ON mascota.runpersona = persona.run
+      JOIN familiamascota ON mascota.idfamilia = familiamascota.id
+      JOIN razamascota ON mascota.idraza = razamascota.id
   `, (err, results) => {
     if (err) {
       console.error('Error al ejecutar la consulta:', err);
@@ -165,7 +165,7 @@ app.post('/guardarFamilia', bodyParser.json(), (req, res) => {
     return;
   }
 
-  connection.query('INSERT INTO familiaMascota SET ?', familia, (err, result) => {
+  connection.query('INSERT INTO familiamascota SET ?', familia, (err, result) => {
     if (err) {
       console.error('Error al ejecutar la consulta:', err);
       res.status(500).json({ error: 'Error al ejecutar la consulta' });
@@ -183,7 +183,7 @@ app.post('/guardarRaza', bodyParser.json(), (req, res) => {
     return;
   }
 
-  connection.query('INSERT INTO razaMascota SET ?', raza, (err, result) => {
+  connection.query('INSERT INTO razamascota SET ?', raza, (err, result) => {
     if (err) {
       console.error('Error al ejecutar la consulta:', err);
       res.status(500).json({ error: 'Error al ejecutar la consulta' });
@@ -244,7 +244,7 @@ app.put('/modificarFamilia', bodyParser.json(), (req, res) => {
 
   const id = familia.id;
 
-  connection.query('UPDATE familiaMascota SET ? WHERE id = ?', [familia, id], (err, result) => {
+  connection.query('UPDATE familiamascota SET ? WHERE id = ?', [familia, id], (err, result) => {
     if (err) {
       console.error('Error al ejecutar la consulta:', err);
       res.status(500).json({ error: 'Error al ejecutar la consulta' });
@@ -264,7 +264,7 @@ app.put('/modificarRaza', bodyParser.json(), (req, res) => {
 
   const id = raza.id;
 
-  connection.query('UPDATE razaMascota SET ? WHERE id = ?', [raza, id], (err, result) => {
+  connection.query('UPDATE razamascota SET ? WHERE id = ?', [raza, id], (err, result) => {
     if (err) {
       console.error('Error al ejecutar la consulta:', err);
       res.status(500).json({ error: 'Error al ejecutar la consulta' });

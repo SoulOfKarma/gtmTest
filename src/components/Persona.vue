@@ -206,7 +206,7 @@ export default {
         apellido: this.apellido,
         telefono: this.telefono,
         correo: this.correo,
-        estadoPersona: 1
+        estadopersona: 1
       } 
       axios
         .post(host+"guardarPersona",persona)
@@ -240,7 +240,7 @@ export default {
     },
     async listarPersonas(){
       axios.get(host+"listaPersonas").then((response) => {
-        this.listaPersonas = response.data
+        this.listaPersonas = response.data      
       })
     },
     async modificarDatosPersona(){
@@ -264,7 +264,7 @@ export default {
         apellido: this.apellido,
         telefono: this.telefono,
         correo: this.correo,
-        estadoPersona: 1
+        estadopersona: 1
       } 
       axios
         .put(host+"modificarPersona",persona)

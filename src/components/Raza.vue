@@ -105,7 +105,7 @@
         }
 
         const raza = {
-          descripcionRaza: this.descripcionRaza
+          descripcionraza: this.descripcionRaza
         }
   
         axios
@@ -156,7 +156,7 @@
 
         const raza = {
           id: this.idRaza,
-          descripcionRaza: this.descripcionRaza,
+          descripcionraza: this.descripcionRaza,
         }
   
         axios
@@ -192,7 +192,7 @@
       },
       async listarRazaMascota(){
         axios.get(host+"listaRazaMascota").then((response) => {
-            this.listaRazaMascota = response.data
+          this.listaRazaMascota = response.data         
         })
     },
       renderColumnaBoton(mascota) {

@@ -112,7 +112,7 @@ export default {
       columns: [
         {
           title: "Rut Dueño",
-          key: "runPersona"
+          key: "runpersona"
         },
         {
           title: "Nombre y Apellido Dueño",
@@ -120,15 +120,15 @@ export default {
         },
         {
           title: "Nombre Mascota",
-          key: "nombreMascota"
+          key: "nombremascota"
         },
         {
           title: "Familia",
-          key: "descripcionFamilia"
+          key: "descripcionfamilia"
         },
         {
           title: "Raza",
-          key: "descripcionRaza"
+          key: "descripcionraza"
         },        
         {
           title: "Opciones",
@@ -155,10 +155,10 @@ export default {
       }
 
       const mascota = {
-        runPersona: this.runPersona,
-        nombreMascota: this.nombreMascota,
-        idFamilia: this.idFamilia,
-        idRaza: this.idRaza
+        runpersona: this.runPersona,
+        nombremascota: this.nombreMascota,
+        idfamilia: this.idFamilia,
+        idraza: this.idRaza
       }
 
       axios
@@ -209,10 +209,10 @@ export default {
 
       const mascota = {
         id: this.idMascota,
-        runPersona: this.runPersona,
-        nombreMascota: this.nombreMascota,
-        idFamilia: this.valueFamilia,
-        idRaza: this.valueRaza
+        runpersona: this.runPersona,
+        nombremascota: this.nombreMascota,
+        idfamilia: this.valueFamilia,
+        idraza: this.valueRaza
       }
 
       axios
@@ -248,22 +248,22 @@ export default {
     },
     async listarPersonas(){
       axios.get(host+"listaPersonasSelect").then((response) => {
-        this.listaPersonas = response.data
+        this.listaPersonas = response.data      
       })
     },
     async listarMascotas(){
       axios.get(host+"listaMascotas").then((response) => {
-        this.listaMascotas = response.data
+        this.listaMascotas = response.data 
       })
     },
     async listarFamiliaMascota(){
       axios.get(host+"listaFamiliaMascota").then((response) => {
-        this.listaFamiliaMascota = response.data
+        this.listaFamiliaMascota = response.data       
       })
     },
     async listarRazaMascota(){
       axios.get(host+"listaRazaMascota").then((response) => {
-        this.listaRazaMascota = response.data
+        this.listaRazaMascota = response.data     
       })
     },
     cambioidFamilia(idFamilia){
@@ -287,12 +287,12 @@ export default {
       ];
     },
     isModificarMascota(mascota) {
-      this.runPersona = mascota.runPersona
-      this.nombreMascota = mascota.nombreMascota
-      this.valueFamilia = mascota.idFamilia
-      this.valueRaza = mascota.idRaza
-      this.idFamilia = mascota.descripcionFamilia
-      this.idRaza = mascota.descripcionRaza
+      this.runPersona = mascota.runpersona
+      this.nombreMascota = mascota.nombremascota
+      this.valueFamilia = mascota.idfamilia
+      this.valueRaza = mascota.idraza
+      this.idFamilia = mascota.descripcionfamilia
+      this.idRaza = mascota.descripcionraza
       this.idMascota = mascota.id
       this.cerrarModificarMascota = true
     },
