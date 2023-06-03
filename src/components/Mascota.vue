@@ -108,7 +108,9 @@ export default {
       valueRaza: "",
       valueFamilia: "",
       idMascota:"",
-      pagination:false,
+      pagination: {
+        pageSize: 10
+      },
       columns: [
         {
           title: "Rut Dueño",

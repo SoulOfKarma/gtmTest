@@ -64,7 +64,9 @@
         listaFamiliaMascota:[],
         idFamilia: "",
         descripcionFamilia:"",
-        pagination:false,
+        pagination: {
+          pageSize: 10
+        },
         columns: [
           {
             title: "ID",

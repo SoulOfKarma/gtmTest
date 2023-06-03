@@ -64,7 +64,9 @@
         listaRazaMascota:[],
         idRaza: "",
         descripcionRaza:"",
-        pagination:false,
+        pagination: {
+          pageSize: 10
+        },
         columns: [
           {
             title: "ID",

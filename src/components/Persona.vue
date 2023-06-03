@@ -120,7 +120,9 @@ export default {
       correo: "",
       estado: 1,
       val_run: false,
-      pagination:false,
+      pagination: {
+        pageSize: 10
+      },
       columns: [
         {
           title: "Rut Dueño",
